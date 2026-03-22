@@ -38,3 +38,7 @@ FROM Fraude_Detectie_Output, Stats
 ORDER BY ABS(Berekende_Z_Score) DESC;
 
 ![Resultaat van de SQL Analyse](screenshot_results.png)
+
+## 🔗 Gerelateerde Projecten
+* **Python Analyse:** Bekijk mijn diepere statistische onderbouwing in [Betrouwbaarheids-technische-gevaren-modellering](link-naar-je-python-repo).
+* **Power BI Dashboard:** De visuele vertaling van deze data-analyse.
