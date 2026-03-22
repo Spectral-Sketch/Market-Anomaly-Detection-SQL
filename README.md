@@ -45,6 +45,9 @@ In het onderstaande screenshot is te zien hoe de SQL-logica de data verwerkt. De
 ![SQL Query Resultaat](screenshot_results.png)
 
 
+## 🔗 Gerelateerde Projecten
+* **Python Analyse:** Bekijk mijn diepere statistische onderbouwing in [Betrouwbaarheids-technische-gevaren-modellering](link-naar-je-python-repo).
+* **Power BI Dashboard:** De visuele vertaling van deze data-analyse.
 
 
 
