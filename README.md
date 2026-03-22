@@ -37,8 +37,33 @@ SELECT
 FROM Fraude_Detectie_Output, Stats
 ORDER BY ABS(Berekende_Z_Score) DESC;
 
-![Resultaat van de SQL Analyse](screenshot_results.png)
+## WITH Stats AS (
+    SELECT 
+        AVG(Log_Returns) AS Gemiddelde,
+        SQRT(AVG(Log_Returns * Log_Returns) - AVG(Log_Returns) * AVG(Log_Returns)) AS StandaardDeviatie
+    FROM Fraude_Detectie_Output
+    WHERE Log_Returns IS NOT NULL
+)
+SELECT 
+    Date,
+    Log_Returns,
+    ROUND((Log_Returns - Stats.Gemiddelde) / Stats.StandaardDeviatie, 4) AS Berekende_Z_Score,
+    CASE 
+        WHEN ABS((Log_Returns - Stats.Gemiddelde) / Stats.StandaardDeviatie) > 2.0 THEN '⚠️ ANOMALIE'
+        ELSE 'Normaal'
+    END AS Status_Detectie
+FROM Fraude_Detectie_Output, Stats
+ORDER BY ABS(Berekende_Z_Score) DESC;
 
-## 🔗 Gerelateerde Projecten
-* **Python Analyse:** Bekijk mijn diepere statistische onderbouwing in [Betrouwbaarheids-technische-gevaren-modellering](link-naar-je-python-repo).
-* **Power BI Dashboard:** De visuele vertaling van deze data-analyse.
+
+
+
+
+
+
+
+
+
+
+
+
