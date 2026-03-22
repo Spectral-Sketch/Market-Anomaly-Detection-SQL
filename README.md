@@ -36,3 +36,5 @@ SELECT
     END AS Status_Detectie
 FROM Fraude_Detectie_Output, Stats
 ORDER BY ABS(Berekende_Z_Score) DESC;
+
+![Resultaat van de SQL Analyse](screenshot_results.png)
